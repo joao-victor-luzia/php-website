@@ -40,10 +40,14 @@
             
         </form>
         
-            
-            <form action="posts.php" method="post">
-            <button>acessar posts</button>
-            
+        <?php 
+
+            if(isset($_SESSION["user_id"])){
+                echo'
+                <form action="posts.php" method="post">
+                <button>acessar posts</button>';
+            }
+        ?>
         </form> 
             
             

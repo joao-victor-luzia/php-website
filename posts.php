@@ -1,27 +1,9 @@
 <?php
 
 require_once "includes/config_session.inc.php";
+require_once "includes/posts_view.inc.php";
 
-if(isset($_SESSION["user_id"])){
-    $username = $_SESSION["username"];
-    try {
-        require_once "includes/dbh.inc.php";
 
-        $query = "SELECT coment_text, username FROM users INNER JOIN posts ON (users.id = posts.user_id)";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        $pdo = null;
-        $stmt = null;
-        
-    } catch (\PDOException $e) {
-        die("Querry falhou em posts" . $e->getMessage());
-    }
-
-}else{
-    header("Location: index.php");
-}
 
 ?>
 
@@ -35,21 +17,19 @@ if(isset($_SESSION["user_id"])){
 <body>
 
 
+    <h2>criar post</h2>
+    <form action="includes/posts.inc.php" method="post">
+            <input type="text" name="coment_text" placeholder="Digite seu post aqui"><br>
+            
+            <button type="submit">postar</button>
+        </form>
+
     <h2>Resultados</h2>
 
     <?php 
     
+       print_posts();
         
-        
-       
-        
-        foreach ($results as $post){
-            echo "<p><b>" . $post["username"]. "<b>: " . htmlspecialchars($post["coment_text"]) . "</p>";
-
-        }
-        
-    
-
     ?>
 
     
