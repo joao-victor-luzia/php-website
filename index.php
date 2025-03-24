@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>principal</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -37,10 +37,17 @@
 
         <form action="includes/logout.inc.php" method="post">
             <button>Logout</button>
-            <?php 
-            echo "<p>".$_SESSION["username"]."</p>"
-            ?>
+            
         </form>
+        
+            
+            <form action="posts.php" method="post">
+            <button>acessar posts</button>
+            
+        </form> 
+            
+            
+        
 
     </main>
 </body>

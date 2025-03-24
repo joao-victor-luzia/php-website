@@ -12,6 +12,6 @@ function check_login_errors(){
         }
         
     } else if (isset($_GET["login"]) and $_GET["login"] ==='success') {
-        echo "<p class='sucesso'> Logado com sucesso!" . $_SESSION["username"] . " </p>";
+        echo "<p class='success'> Logado com sucesso! Seja bem vindo " . $_SESSION["username"] . " </p>";
     }
 }

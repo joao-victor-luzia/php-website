@@ -15,7 +15,7 @@ function check_signup_errors(){
         }
         
     } else if (isset($_GET["signup"]) and $_GET["signup"] ==='success') {
-        echo "<p class='sucesso'> Cadastrado com sucesso! </p>";
+        echo "<p class='success'> Cadastrado com sucesso! </p>";
     }
 }
 

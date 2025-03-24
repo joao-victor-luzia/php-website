@@ -1,6 +1,6 @@
 <?php
 
-$host = "mysql:host=localhost; dbname=sitedb";
+$host = "mysql:host=localhost; dbname=myfirstdb";
 $dbuser = "root";
 $dbpwd = "";
 
