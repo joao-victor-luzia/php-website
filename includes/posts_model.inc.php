@@ -3,7 +3,7 @@ require_once 'dbh.inc.php';
 
 function get_posts () {
     global $pdo;
-    $query = "SELECT coment_text, username FROM users INNER JOIN posts ON (users.id = posts.user_id)";
+    $query = "SELECT coment_text, username, posted_at FROM users INNER JOIN posts ON (users.id = posts.user_id)";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
