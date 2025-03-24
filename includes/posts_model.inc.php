@@ -7,7 +7,7 @@ function get_posts () {
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $results;
+    return array_reverse($results);
 }
 
 function set_post(object $pdo, string $text, int $userId){

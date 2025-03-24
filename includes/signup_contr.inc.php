@@ -1,6 +1,5 @@
 <?php
 
-//tratar dados do usuario 
 declare(strict_types=1);
 
 function is_input_enpty(string $username, string $pwd, string $email){

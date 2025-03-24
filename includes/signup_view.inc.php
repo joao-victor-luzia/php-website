@@ -32,7 +32,7 @@ function signup_inputs() {
 
 
     if (isset($_SESSION["signup_data"]['email']) and 
-    !isset($_SESSION["errors_signup"]['invalid_email'])){
+    !isset($_SESSION["errors_signup"]['email_used'])){
         echo '<input type="text" name="email" placeholder="Email" value="'.htmlspecialchars($_SESSION["signup_data"]['email']).'"><br>';
     }else{
         echo '<input type="text" name="email" placeholder="Email"><br>';
